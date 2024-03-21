@@ -18,6 +18,15 @@ nav{
 .nav-link{
     margin: 0 1rem;
     font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+
+.active-link{
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+    opacity: 1;
 }
 
 .nav-link > a{
@@ -100,12 +109,13 @@ nav{
     margin: 5rem 0;
     padding: 2rem;
 }
-#services > h2{
+.section-header{
     font-family: "Corinthia", cursive;
     color: #B09343;
     font-size: 7rem;
     font-weight: bold;
     text-align: center;
+    margin: 1rem 0;
 }
 
 #services-container{
@@ -169,8 +179,8 @@ nav{
     flex-direction: column;
     align-items: center;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.699);
-    color: white;
+    background-color: rgba(240, 248, 255, 0.411);
+    color: black;
     font-size: 1rem;
 }
 #google-reviews-container > p{
@@ -188,10 +198,76 @@ nav{
     width: 10px;
     border-radius: 100%;
     margin-right: 1rem;
-    border: 1px solid white;
+    border: 1px solid black;
 }
 .current-review{
-    background-color: white;
+    background-color: black;
+}
+
+#social-media {
+    display: flex;
+    align-items: center;
+}
+
+#social-media > a {
+    height: 30px;
+    width: 30px;
+    margin-right: 1rem;
+}
+#social-media > a > img{
+    width: 100%;
+}
+
+#contact{
+    margin: 5rem 2rem;
+}
+
+#contact-container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+}
+
+
+#contact-info > *{
+    margin: 0;
+}
+
+#contact-form{
+    margin: 0px 10rem;
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+}
+.form-input > label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.form-input > input{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+#message-input{
+    font-size: 1.1rem;
+    height: 5rem;
+    resize: none;
+}
+#submit-button{
+    align-self: center;
+    background-color: #e2c36c;
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
 /* 
