@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
     galleryButtons.childNodes.forEach(button => {
         button.addEventListener('click', (b) => {
             const buttonDataset = b.target.dataset.galleryList
-            window.location.href = `gallery.html?list=${buttonDataset}`
+            window.location.href = `Gallery?list=${buttonDataset}`
         })
     });
 
