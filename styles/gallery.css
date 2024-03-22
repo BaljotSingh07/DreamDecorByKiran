@@ -1,0 +1,72 @@
+body{
+    color: black;
+}
+
+#gallery-hero{
+    margin-top: 2rem;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+}
+
+#gallery-hero > h1{
+    font-size: 6rem;
+    margin: 0;
+    font-weight: bold;
+    
+}
+#gallery-hero > p {
+    font-size: 2rem;
+    margin: 0;
+}
+#gallery-hero > a{
+    background-color: #e2c36c;
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    text-decoration: none;
+}
+
+#gallery-hero::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-image: url('/images/OurWorkHeroImage.jpg');
+    background-position: center;
+    position: absolute;
+    z-index: -1;
+}
+#gallery-hero::after{
+    content: "";
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); 
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+}
+
+#gallery-buttons{
+    width: fit-content;
+    margin: 1rem auto;
+}
+.gallery-button{
+    font-size: 1rem;
+    background-color: white;
+    border: none;
+    margin: 0 1rem;
+    padding: 1rem;
+    width: 130px;
+    cursor: pointer;
+}
+.active-button{
+    color: white;
+    background-color: black;
+}
