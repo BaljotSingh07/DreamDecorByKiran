@@ -25,7 +25,7 @@ var googleReviews = [
 ]
 
 window.addEventListener('load', function () {
-    var currentReview = 0;
+    var currentReview = 1;
     var reviewText = this.document.getElementById("google-review");
 
     //populate the pagination
@@ -33,6 +33,7 @@ window.addEventListener('load', function () {
     googleReviews.forEach(review => {
         paginationDiv.appendChild(this.document.createElement("div"))
     });
+    paginationDiv.children[0].classList.toggle('current-review');
     
     this.setInterval(() => {
         reviewText.innerHTML = googleReviews[currentReview].review + `<span style="font-weight: bold;">- ${googleReviews[currentReview].name}</span>`;
