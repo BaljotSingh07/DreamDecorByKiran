@@ -4,7 +4,7 @@ body{
 
 #gallery-hero{
     margin-top: 2rem;
-    height: 50vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,19 +34,17 @@ body{
     text-decoration: none;
 }
 
-#gallery-hero::before{
-    content: "";
+#hero-image{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-image: url('/images/OurWorkHeroImage.jpg');
     background-position: center;
     position: absolute;
     z-index: -1;
 }
 #gallery-hero::after{
     content: "";
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 50%); 
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0, 0, 0, 0.322) 25%); 
     position: absolute;
     z-index: -1;
     height: 100%;
@@ -69,4 +67,10 @@ body{
 .active-button{
     color: white;
     background-color: black;
+}
+
+.css-15ewv6a{
+    background-color: rgba(0, 0, 0, 0.034);
+    font-size: 10px;
+    display: none;
 }
