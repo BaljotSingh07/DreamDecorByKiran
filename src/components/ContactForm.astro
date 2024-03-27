@@ -21,7 +21,8 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
                 <a href=""><img src="images/instagram-logo.jpg" alt=""></a>
             </div>
         </div>
-        <form action="https://formspree.io/f/mjvnedej" method="POST">
+
+        <form name="Contact-Form" netlify>
             <div class="form-input">
                 <label for="name-input">Name *</label>
                 <input name="Name" id="name-input" type="text">
@@ -101,5 +102,17 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
     }
     #contact-info > *{
         margin: 0;
+    }
+    @media screen and (max-width: 500px) {
+        #main{
+            display: block;
+        }
+        form{
+            display: block;
+            margin: 20px 0;
+        }
+        .form-input{
+            margin: 10px 0;
+        }
     }
 </style>
