@@ -1,0 +1,105 @@
+---
+import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
+
+
+---
+<HomeSectionLayout sectionTitle="Let's Get In Touch">
+    <div id="main">
+        <div id="contact-info">
+            <h2>Email Address</h2>
+            <p>emailaddress@gmail.com</p>
+
+            <br>
+
+            <h2>Phone Number</h2>
+            <p>123-456-7890</p>
+
+            <br>
+
+            <div id="social-media">
+                <a href=""><img src="images/facebook-logo.svg" alt=""></a>
+                <a href=""><img src="images/instagram-logo.jpg" alt=""></a>
+            </div>
+        </div>
+        <form action="https://formspree.io/f/mjvnedej" method="POST">
+            <div class="form-input">
+                <label for="name-input">Name *</label>
+                <input name="Name" id="name-input" type="text">
+            </div>
+            <div class="form-input">
+                <label for="email-input">Email *</label>
+                <input name="Email" id="email-input" type="text">
+            </div>
+            <div class="form-input">
+                <label for="eventtype-input">Event Type</label>
+                <input name="Event Type" id="eventtype-input" type="text">
+            </div>
+            <div class="form-input">
+                <label for="date-input">Event Date</label>
+                <input name="Event Date" id="date-input" type="date">
+            </div>
+            <div class="form-input">
+                <label for="venue-input">Venue Name</label>
+                <input name="Venue Name" id="venue-input" type="text">
+            </div>
+            <div class="form-input">
+                <label for="number-of-guest-input">Number Of Guests</label>
+                <input name="Number Of Guests" id="number-of-guest-input" type="number">
+            </div>
+            <div style="grid-column: 1 / span 2;" class="form-input">
+                <label for="message-input">Message</label>
+                <textarea name="message" id="message-input"></textarea>
+            </div>
+            <button class="primary-button" type="submit">Submit</button>
+        </form>
+    </div>
+</HomeSectionLayout>
+
+<style>
+    #main{
+        display: flex;
+        justify-content: center;
+    }
+
+    #social-media {
+    display: flex;
+    align-items: center;
+    }
+
+    #social-media > a {
+        height: 30px;
+        width: 30px;
+        margin-right: 1rem;
+    }
+    #social-media > a > img{
+        width: 100%;
+    }
+
+    form{
+        margin: 0px 10rem;
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .form-input{
+    display: flex;
+    flex-direction: column;
+    }
+    .form-input > label{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    .form-input > input{
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+    #message-input{
+        font-size: 1.1rem;
+        height: 5rem;
+        resize: none;
+    }
+    #contact-info > *{
+        margin: 0;
+    }
+</style>

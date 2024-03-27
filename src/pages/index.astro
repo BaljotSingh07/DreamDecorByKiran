@@ -1,0 +1,26 @@
+---
+import HomeHero from '../components/HomeHero.astro';
+import Layout from '../layouts/Layout.astro';
+import Services from '../components/Services.astro'
+import GoogleReview from '../components/GoogleReview.astro';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="DreamDecorByKiran">
+	<HomeHero />
+	<Services />
+	<GoogleReview />
+	<ContactForm />
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+</style>

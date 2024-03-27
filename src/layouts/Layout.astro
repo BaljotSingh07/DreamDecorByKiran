@@ -1,0 +1,112 @@
+---
+interface Props {
+	title: string;
+}
+interface Link {
+	text : string;
+	url : string;
+}
+const links:Link[] = [
+	{text: "Home", url : "/"},
+	{text : "Gallery", url : "/gallery"},
+	{text: "About Me", url : "/AboutMe"}
+]
+const currentPath = Astro.url.pathname;
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    	<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+    	<link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+		<!-- Google Fonts -->
+		<title>{title}</title>
+	</head>
+	<nav>
+        <img src="/images/dreamdecorbykiranlogo.jpg" alt="">
+        <ul id="nav-links">
+			{
+				links.map(link => <li class={currentPath === link.url ? 'active-link nav-link' : 'nav-link'}><a href={link.url}>{link.text}</a></li>)
+			}
+        </ul>
+    </nav>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root{
+		--primary-color: #e2c36c
+	}
+
+	html {
+		font-family: 'Noto Sans';
+	}
+
+	.primary-button{
+		background-color: var(--primary-color);
+		color: black;
+		text-decoration: none;
+		padding: 10px 20px;
+		font-size: 1.3rem;
+		
+        border: none;
+        align-self: center;
+	}
+	#review-pagination > div{
+        width: 50px;
+        height: 5px;
+        border: 1px solid black;
+        margin: 0 10px;
+    }
+	.current-review{
+        background-color: black;
+    }
+</style>
+
+<style>
+	nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	}
+
+	#nav-links{
+		list-style: none;
+		display: flex;
+		align-items: center;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav-link{
+		margin: 0 1rem;
+		font-size: 1.2rem;
+		opacity: 0.7;
+	}
+
+
+	.active-link{
+		font-weight: bold;
+		text-decoration: underline;
+		color: black;
+		opacity: 1;
+	}
+
+	.nav-link > a{
+		text-decoration: none;
+		color: black;
+	}
+
+	
+</style>
