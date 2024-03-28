@@ -9,9 +9,9 @@ interface Link {
 	url : string;
 }
 const links:Link[] = [
-	{text: "Home", url : "/"},
-	{text : "Gallery", url : "/gallery"},
-	{text: "About Me", url : "/AboutMe"}
+	{text: "Home", url : ""},
+	{text : "Gallery", url : "gallery"},
+	{text: "About Me", url : "AboutMe"}
 ]
 const currentPath = Astro.url.pathname;
 const { title } = Astro.props;
@@ -32,13 +32,12 @@ const { title } = Astro.props;
     	<link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
 		<!-- Google Fonts -->
 		<title>{title}</title>
-		<ViewTransitions/>
 	</head>
 	<nav >
         <img src="/images/dreamdecorbykiranlogo.jpg" alt="">
-        <ul transition:animate="slide" id="nav-links">
+        <ul id="nav-links">
 			{
-				links.map(link => <li class={currentPath === link.url ? 'active-link nav-link' : 'nav-link'}><a href={link.url}>{link.text}</a></li>)
+				links.map(link => <li class={currentPath.split("/")[1] == link.url ? 'active-link nav-link' : 'nav-link'}><a href={"/" + link.url}>{link.text}</a></li>)
 			}
         </ul>
     </nav>
