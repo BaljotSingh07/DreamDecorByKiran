@@ -23,7 +23,7 @@ const { event } = Astro.params;
         <img src="/images/OurWorkHeroImage.jpg" alt="">
     </div>
     <div transition:name="eventTabs" id="tabs">
-        {events.map(e => <a  data-astro-reload class:list={{"active" : event == e.params.event}} href={e.params.event + "#tabs"}>{e.params.event}</a>)}
+        {events.map(e => <a  data-astro-reload class:list={{"active" : event == e.params.event}} href={"/gallery/" + e.params.event + "#tabs"}>{e.params.event}</a>)}
     </div>
     <div id="gallery">
 
