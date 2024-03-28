@@ -3,33 +3,35 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
 
 
 ---
-<HomeSectionLayout sectionTitle="Let's Get In Touch">
+<HomeSectionLayout backgroundColor="whitesmoke" sectionTitle="Let's Get In Touch">
     <div id="main">
         <div id="contact-info">
             <h2>Email Address</h2>
-            <p>emailaddress@gmail.com</p>
+            <a href = "mailto: dreamdecorbykiran.gmail.com">dreamdecorbykiran.gmail.com</a>
 
+            <br>
             <br>
 
             <h2>Phone Number</h2>
-            <p>123-456-7890</p>
+            <a href="tel:+1 (414) 306-2111">(414) 306-2111</a>
 
+            <br>
             <br>
 
             <div id="social-media">
-                <a href=""><img src="images/facebook-logo.svg" alt=""></a>
-                <a href=""><img src="images/instagram-logo.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/dreamdecorbykiran/"><img src="images/facebook-logo.svg" alt=""></a>
+                <a target="_blank" href="https://www.instagram.com/dreamdecorbykiran/?hl=en"><img src="images/instagram-logo.jpg" alt=""></a>
             </div>
         </div>
 
         <form name="Contact-Form" netlify>
             <div class="form-input">
                 <label for="name-input">Name *</label>
-                <input name="Name" id="name-input" type="text">
+                <input required name="Name" id="name-input" type="text">
             </div>
             <div class="form-input">
                 <label for="email-input">Email *</label>
-                <input name="Email" id="email-input" type="text">
+                <input required name="Email" id="email-input" type="text">
             </div>
             <div class="form-input">
                 <label for="eventtype-input">Event Type</label>
@@ -84,24 +86,26 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     }
     .form-input{
-    display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
     .form-input > label{
         font-size: 1.2rem;
-        font-weight: bold;
     }
     .form-input > input{
         font-size: 1.5rem;
-        padding: 0.5rem;
+        padding: 0.7rem 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.219);
     }
     #message-input{
         font-size: 1.1rem;
         height: 5rem;
         resize: none;
+        border: 1px solid rgba(0, 0, 0, 0.219);
     }
-    #contact-info > *{
+    #contact-info > h2{
         margin: 0;
+
     }
     @media screen and (max-width: 500px) {
         #main{

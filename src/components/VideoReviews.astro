@@ -1,0 +1,93 @@
+---
+import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
+
+
+---
+<HomeSectionLayout backgroundColor="white" sectionTitle="">
+    <div id="main">
+        <div class="video-container">
+            <video src="/VideoReviews/1711232776480.mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="video-container">
+            <video src="/VideoReviews/1711641148533.mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="video-container">
+            <video src="/VideoReviews/1711641239067.mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="video-container">
+            <video src="/VideoReviews/1711641251238.mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="video-container">
+            <video src="/VideoReviews/1711641262706.mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
+        <div class="video-container">
+            <video src="/VideoReviews/1711641279092.mp4"></video>
+            <div class="video-overlay"></div>
+        </div>
+    </div>
+</HomeSectionLayout>
+
+<style>
+    #main{
+        display: flex;
+        overflow: scroll;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    video{
+        margin: 0 20px;
+        width: 350px;
+    }
+    .video-container{
+        position: relative;
+    }
+    .video-overlay{
+        position: absolute;
+        height: 100%;
+        width: 350px;
+        top: -5px;
+        left: 20px;
+    }
+    .paused > .video-overlay{
+        background-color: rgba(255, 255, 255, 0.212);
+        background-image: url("images/play-button.png");
+        background-size: 70px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+</style>
+
+<script>
+    const videosDiv = document.querySelectorAll(".video-container");
+    
+    var currentVideoPlaying = null;
+    pauseAllVidoes();
+    videosDiv.forEach((videoContainer,i) => {
+        videoContainer.addEventListener("click", (arg) => {
+            const containerVideo = videoContainer.querySelector("video")
+            pauseAllVidoes();
+            if(currentVideoPlaying == containerVideo){
+                containerVideo.pause();
+                currentVideoPlaying = null;
+            }else{
+                currentVideoPlaying = containerVideo;
+                videoContainer.classList.remove("paused")
+                containerVideo.play();
+            }
+        })
+    })
+
+    function pauseAllVidoes(){
+        videosDiv.forEach((videoContainer,i) => {
+            const containerVideo = videoContainer.querySelector("video")
+            videoContainer.classList.add("paused")
+            containerVideo.pause();
+        })
+    }
+</script>

@@ -1,18 +1,20 @@
 ---
+
 interface Props {
     sectionTitle : string;
+    backgroundColor: string;
 }
-const {sectionTitle } = Astro.props
+const {sectionTitle, backgroundColor } = Astro.props
 ---
 <div class="home-section">
     {sectionTitle && <h1>{sectionTitle}</h1>}
     <slot />
 </div>
 
-<style>
+<style define:vars={{backgroundColor}}>
     .home-section{
         padding: 20px;
-        background-color: whitesmoke;
+        background-color: var(--backgroundColor);
     }
     h1{
         font-size: 3rem;

@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
+
 interface Props {
 	title: string;
 }
@@ -30,10 +32,11 @@ const { title } = Astro.props;
     	<link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
 		<!-- Google Fonts -->
 		<title>{title}</title>
+		<ViewTransitions/>
 	</head>
-	<nav>
+	<nav >
         <img src="/images/dreamdecorbykiranlogo.jpg" alt="">
-        <ul id="nav-links">
+        <ul transition:animate="slide" id="nav-links">
 			{
 				links.map(link => <li class={currentPath === link.url ? 'active-link nav-link' : 'nav-link'}><a href={link.url}>{link.text}</a></li>)
 			}
@@ -46,7 +49,7 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root{
-		--primary-color: #e2c36c
+		--primary-color: #e2c36c;
 	}
 
 	html {
@@ -59,9 +62,13 @@ const { title } = Astro.props;
 		text-decoration: none;
 		padding: 10px 20px;
 		font-size: 1.3rem;
-		
         border: none;
         align-self: center;
+	}
+	.primary-button:hover{
+		cursor: pointer;
+		background-color: #1d1a13;
+		color: white;
 	}
 	#review-pagination > div{
         width: 50px;
@@ -72,6 +79,7 @@ const { title } = Astro.props;
 	.current-review{
         background-color: black;
     }
+	
 </style>
 
 <style>
