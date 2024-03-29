@@ -1,11 +1,13 @@
 ---
 import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
 import VideoReviews from "./VideoReviews.astro";
+import { Image } from "astro:assets";
+import GoogleFiveStarImage from "../images/google-five-star.png"
 
 ---
 <HomeSectionLayout backgroundColor="white" sectionTitle="Delighted Couples">
     <div id="main">
-        <img src="images/google-five-start.png" >
+        <Image src={GoogleFiveStarImage} alt="Google five star image"/>
         <p id="review-text">Kiran is just sooooo amazing to work with! She is creative and she works very hard to make sure your vision comes 
             to life! Dream decor did all of our events and each event was unique and beautiful because of this amazing crew! Just an amazing 
             experience with dream decor team! Dream Team ♥️ - <span style="font-weight: bold;">Sukhu R</span>
@@ -23,7 +25,7 @@ import VideoReviews from "./VideoReviews.astro";
     }
     img{
         max-width: 250px;
-        
+        height: 100%;
     }
     #review-text{
         max-width: 900px;

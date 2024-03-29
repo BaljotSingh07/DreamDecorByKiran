@@ -1,4 +1,7 @@
 ---
+import {Image} from "astro:assets"
+import TopSectionImage from "../images/DreamDecorSectionTop.jpg"
+import BottomSectionImage from "../images/DreamDecorSectionBottom.jpg"
 ---
 <div id="dd-section">
     <div id="top-section">
@@ -10,10 +13,10 @@
                 we weave magic into every detail, ensuring that your special day reflects your unique love story. Let us be the canvas for your wedding dreams.
             </p>
         </div>
-        <img src="/images/DreamDecorSectionTop.jpg">
+        <Image src={TopSectionImage} alt="Wedding Decor"/>
     </div>
     <div id="bottom-section">
-        <img src="/images/DreamDecorSectionBottom.jpg">
+        <Image src={BottomSectionImage} alt="Wedding Decor"/>
         <div class="text-section">
             <h1>Our Decor</h1>
             <p>Turning Spaces into Wedding Art At DreamDecorbyKiran, decoration isn't just about aesthetics; it's an art form that celebrates love. Our journey begins with understanding your 
@@ -48,6 +51,7 @@
     }
     img{
         width: 100%;
+        height: 100%;
         border: 5px solid white;
         object-fit: cover;
     }

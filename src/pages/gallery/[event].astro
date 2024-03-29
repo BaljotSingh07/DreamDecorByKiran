@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-
+import { Image } from 'astro:assets';
+import OurWorkHeroImage from "../../images/OurWorkHeroImage.jpg"
 
 export function getStaticPaths() {
     return events
@@ -20,7 +21,7 @@ const { event } = Astro.params;
     <div id="main">
         <h1>Our Work</h1>
         <h2>Crafting Timeless Memories</h2>
-        <img src="/images/OurWorkHeroImage.jpg" alt="">
+        <Image src={OurWorkHeroImage} alt="An image of an backdrop"/>
     </div>
     <div transition:name="eventTabs" id="tabs">
         {events.map(e => <a  data-astro-reload class:list={{"active" : event == e.params.event}} href={"/gallery/" + e.params.event + "#tabs"}>{e.params.event}</a>)}

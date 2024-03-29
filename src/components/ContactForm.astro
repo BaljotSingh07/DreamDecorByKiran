@@ -1,6 +1,8 @@
 ---
 import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
-
+import { Image } from "astro:assets";
+import FacebookLogo from "../images/facebook-logo.svg"
+import InstagramLogo from "../images/instagram-logo.jpg"
 
 ---
 <HomeSectionLayout backgroundColor="whitesmoke" sectionTitle="Let's Get In Touch">
@@ -19,8 +21,12 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
             <br>
 
             <div id="social-media">
-                <a target="_blank" href="https://www.facebook.com/dreamdecorbykiran/"><img src="images/facebook-logo.svg" alt=""></a>
-                <a target="_blank" href="https://www.instagram.com/dreamdecorbykiran/?hl=en"><img src="images/instagram-logo.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/dreamdecorbykiran/">
+                    <Image src={FacebookLogo} alt="Facebook Logo"/>
+                </a>
+                <a target="_blank" href="https://www.instagram.com/dreamdecorbykiran/?hl=en">
+                    <Image src={InstagramLogo} alt="Instagram Logo"/>
+                </a>
             </div>
         </div>
 
@@ -76,6 +82,7 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
     }
     #social-media > a > img{
         width: 100%;
+        height: 100%;
     }
 
     form{

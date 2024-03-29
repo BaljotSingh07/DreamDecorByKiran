@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { Image } from 'astro:assets';
+import DreamDecorByKiranLogo from "../images/dreamdecorbykiranlogo.jpg"
 
 interface Props {
 	title: string;
@@ -34,7 +35,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<nav >
-        <img src="/images/dreamdecorbykiranlogo.jpg" alt="">
+        <Image src={DreamDecorByKiranLogo} alt="DreamDecorByKiran Logo"/>
         <ul id="nav-links">
 			{
 				links.map(link => <li class={currentPath.split("/")[1] == link.url ? 'active-link nav-link' : 'nav-link'}><a href={"/" + link.url}>{link.text}</a></li>)

@@ -1,6 +1,9 @@
 ---
 import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
-
+import {Image} from "astro:assets"
+import ServiceImage1 from '../images/serviceImage1.jpg'
+import ServiceImage2 from '../images/serviceImage2.jpg'
+import ServiceImage3 from '../images/serviceImage3.jpg'
 
 ---
 <HomeSectionLayout backgroundColor="whitesmoke" sectionTitle="More Than Just Decor">
@@ -18,9 +21,9 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
             </a>
         </div>
         <div id="images">
-            <img src="images/2X9A4362.jpg" alt="">
-            <img src="images/74204259.jpg" alt="">
-            <img src="images/74204909.jpg" alt="">
+            <Image src={ServiceImage1} alt="decoration image 1"/>
+            <Image src={ServiceImage2} alt="decoration image 2"/>
+            <Image src={ServiceImage3} alt="decoration image 3"/>
         </div>
     </div>
 </HomeSectionLayout>
@@ -45,6 +48,7 @@ import HomeSectionLayout from "../layouts/HomeSectionLayout.astro";
     }
     img{
         width: 100%;
+        height: 100%;
         max-width: 400px;
         aspect-ratio: 16/9;
         scale: 1.2;
