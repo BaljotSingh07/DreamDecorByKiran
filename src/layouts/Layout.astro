@@ -38,7 +38,8 @@ const { title } = Astro.props;
         <Image src={DreamDecorByKiranLogo} alt="DreamDecorByKiran Logo"/>
         <ul id="nav-links">
 			{
-				links.map(link => <li class={currentPath.split("/")[1] == link.url ? 'active-link nav-link' : 'nav-link'}><a href={"/" + link.url}>{link.text}</a></li>)
+				//only match the base url
+				links.map(link => <li class={currentPath.split("/")[1] == link.url.split("/")[0] ? 'active-link nav-link' : 'nav-link'}><a href={"/" + link.url}>{link.text}</a></li>)
 			}
         </ul>
     </nav>
